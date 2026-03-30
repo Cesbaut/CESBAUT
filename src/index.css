@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --apple-black: #000000;
+  --apple-dark-gray: #050505;
+  --apple-card-bg: #121212;
+  --apple-text-main: #ffffff;
+  --apple-text-gray: #86868b;
+  --apple-green: #34c759; /* Verde Apple Oficial */
+  --apple-neon-green: #30d158;
+  --apple-magenta: #a618d1;
+  --apple-blur: saturate(180%) blur(20px);
+  
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --max-width: 60%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--apple-black);
+  color: var(--apple-text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Luces Neón Verde & Magenta */
+body::before, body::after {
+  content: "";
+  position: fixed;
+  width: 60vw;
+  height: 60vw;
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: -1;
+  opacity: 0.12;
+  pointer-events: none;
+  animation: pulse 15s infinite alternate ease-in-out;
+}
+
+body::before {
+  top: -10vw;
+  right: -10vw;
+  background: radial-gradient(circle, var(--apple-green) 0%, transparent 70%);
+}
+
+body::after {
+  bottom: -10vw;
+  left: -20vw;
+  background: radial-gradient(circle, var(--apple-magenta) 0%, transparent 70%);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.1; }
+  100% { transform: scale(1.3); opacity: 0.18; }
+}
+
+::selection {
+  background: var(--apple-green);
+  color: #fff;
+}

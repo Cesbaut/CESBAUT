@@ -1,0 +1,250 @@
+/* Base Configuration */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-main {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden; /* Prevención de desbordamiento horizontal */
+}
+
+@media (min-width: 1025px) {
+  .app-main { max-width: 60%; }
+}
+
+/* Hero Section */
+.hero-jobs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  min-height: 98vh;
+  padding: 60px 24px;
+}
+
+.hero-profile-img {
+  width: min(180px, 40vw);
+  height: min(180px, 40vw);
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 32px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+}
+
+.hero-main-title {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  font-size: clamp(38px, 9vw, 92px); /* Ajustado para pantallas mini */
+  color: #ffffff;
+}
+
+.hero-tag {
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  font-size: clamp(11px, 3vw, 14px);
+  color: var(--apple-green);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  gap: 8px;
+}
+
+.hero-desc {
+  font-size: clamp(17px, 4vw, 24px);
+  color: var(--apple-text-gray);
+  margin-top: 24px;
+  max-width: 600px;
+  line-height: 1.4;
+}
+
+/* Container & Sections */
+.container { 
+  width: 100%; 
+  padding: 0 20px;
+  max-width: 100%;
+}
+
+.section-title-big {
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  font-size: clamp(32px, 8vw, 62px);
+  margin-bottom: 48px;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Bento Grid System */
+.bento-grid {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 24px;
+}
+
+.bento-card {
+  width: 100%;
+  background: rgba(22, 22, 22, 0.8);
+  backdrop-filter: blur(40px);
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: clamp(32px, 6vw, 60px);
+}
+
+.bento-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--apple-green);
+  box-shadow: 0 0 30px rgba(52, 199, 89, 0.1);
+}
+
+/* Flexbox Layout for Wide Screens */
+@media (min-width: 769px) {
+  .card-content-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 40px;
+  }
+}
+
+.card-info-side { flex: 1.2; display: flex; flex-direction: column; }
+.card-visual-side { flex: 0.8; display: flex; justify-content: center; align-items: center; }
+
+.card-visual-img, .card-visual-side svg, .card-visual-side img {
+  max-width: min(200px, 80%);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.card-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--apple-green);
+  margin-bottom: 12px;
+}
+
+.card-title { 
+  letter-spacing: -0.02em; 
+  line-height: 1.1; 
+  font-size: clamp(26px, 6vw, 42px);
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.card-text {
+  font-size: clamp(15px, 4vw, 18px);
+  color: var(--apple-text-gray);
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+.tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.apple-tag {
+  background: rgba(255, 255, 255, 0.04);
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--apple-text-gray);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.apple-button-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 100px;
+  background: var(--apple-green);
+  color: #fff;
+  padding: 12px 28px;
+  font-size: 14px;
+}
+
+/* Skills Section */
+.skills-list { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 12px;
+  justify-content: center;
+}
+
+.skill-pill-dynamic {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Footer Section */
+.apple-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 80px 20px;
+}
+
+.contact-links { display: flex; justify-content: center; gap: 32px; }
+.contact-item { text-decoration: none; font-weight: 500; color: var(--apple-text-gray); font-size: 16px; }
+
+.footer-copyright { margin-top: 60px; color: #424245; font-size: 11px; letter-spacing: 0.1em; }
+
+/* REPARACIÓN ÓPTICA PARA PANTALLAS MINI (iPhone SE/iPhone 12 Mini) */
+
+@media (max-width: 768px) {
+  .app-main { padding: 0 12px; }
+  .hero-jobs { padding: 60px 12px; }
+  .card-content-layout { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 32px; }
+  .card-info-side { order: 2; width: 100%; align-items: center; }
+  .card-visual-side { order: 1; width: 100%; justify-content: center; margin-bottom: 12px; }
+  .tags-row { justify-content: center; }
+  .bento-card { border-radius: 24px; padding: 32px 20px; }
+  .contact-links { flex-direction: column; gap: 24px; }
+}
+
+@media (max-width: 380px) {
+  .hero-profile-img { width: 120px; height: 120px; }
+  .hero-main-title { font-size: 38px; }
+  .section-title-big { font-size: 32px; }
+  .card-title { font-size: 26px; }
+  .apple-button-link { width: 100%; justify-content: center; }
+  .skill-pill-dynamic { width: 100%; max-width: 240px; justify-content: flex-start; }
+}
+
+@media (max-width: 320px) {
+  .hero-main-title { font-size: 34px; }
+  .p-60 { padding: 24px 16px; }
+}
