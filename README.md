@@ -1,16 +1,56 @@
-# React + Vite
+# Cesar Bautista 
+### Software Engineer | Full Stack Developer | Computer Engineering @ UNAM
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
+  <img src="src/img/IMG_6021.jpg" width="200" style="border-radius: 50%;" />
+  <br />
+  <p align="center">
+    <b>Ingeniero de Software especializado en arquitecturas escalables y alto rendimiento.</b>
+  </p>
+</div>
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Proyectos Destacados
 
-## React Compiler
+### 🟢 [Latager](https://latager.com)
+Solución integral de planeación académica que optimiza la experiencia de **+3,500 estudiantes** en la UNAM. Arquitectura robusta con sincronización en tiempo real.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🟢 [Hexacode](https://mmedia1.fi-b.unam.mx/hexacode/)
+IDE especializado en la enseñanza de arquitectura z80/8086 con motor lógico en **Lua** sobre un entorno web fluido.
 
-## Expanding the ESLint configuration
+### 🟢 [Módulo QSP](https://plagasqsp.com/)
+Digitalización de procesos operativos y auditorías industriales para el sector de control de plagas avanzado.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Stack Tecnológico
+
+- **Backend:** Python (Django, DRF), Lua.
+- **Frontend:** React, JavaScript, CSS (Apple Design System).
+- **Herramientas:** Docker, PostgreSQL, MySQL.
+- **Low-Level:** Assembler (z80/8086).
+
+---
+
+## 🎓 Educación & Experiencia
+
+- **UNAM (Facultad de Ingeniería):** Ingeniería en Computación (2022 - 2027).
+- **Lab Multimedia UNAM:** Director de Proyecto & Lead Full Stack.
+- **Quality & Pest Control:** Full Stack Engineer.
+
+---
+
+## 📬 Contacto Directo
+
+Si buscas resultados técnicos de alto impacto, hablemos:
+
+📧 **Email:** [bautistac.cesar.p8@gmail.com](mailto:bautistac.cesar.p8@gmail.com)  
+📱 **WhatsApp:** [+52 55 3016 4627](tel:+525530164627)  
+🔗 **LinkedIn:** [linkedin.com/in/cesbaut](https://linkedin.com/in/cesbaut)
+
+---
+
+<p align="center">
+  Generated with  Apple Pro Design System
+</p>
