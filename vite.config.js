@@ -89,7 +89,7 @@ ${proyList.join('\n')}
 ${formList.join('\n')}
 
 ---
-> 💡 Este código (repositorio) puede usarse como plantilla para automatizar generativamente la creación de un Portafolio Web, este mismo README.md, y un CV Profesional estilo Harvard desde una sola fuente (\`data.jsx\`) y se actualiza automaticamente.
+> 💡 Este código (repositorio) puede usarse como plantilla para automatizar generativamente la creación de un Portafolio Web, este mismo README.md, y un CV Profesional estilo Harvard desde una sola fuente ([\`data.jsx\`](./src/data.jsx)) y se actualiza automaticamente.
 
 `;
       fs.writeFileSync(readmePath, md);

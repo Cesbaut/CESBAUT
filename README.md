@@ -25,5 +25,5 @@ Ingeniero de Software especializado en **Desarrollo Web Full Stack.** Aquí pued
 - **Ingeniería en Computación** en **Universidad Nacional Autónoma de México (UNAM)** (2022 - 2027)
 
 ---
-> 💡 Este código (repositorio) puede usarse como plantilla para automatizar generativamente la creación de un Portafolio Web, este mismo README.md, y un CV Profesional estilo Harvard desde una sola fuente (`data.jsx`) y se actualiza automaticamente.
+> 💡 Este código (repositorio) puede usarse como plantilla para automatizar generativamente la creación de un Portafolio Web, este mismo README.md, y un CV Profesional estilo Harvard desde una sola fuente ([`data.jsx`](./src/data.jsx)) y se actualiza automaticamente.
 
