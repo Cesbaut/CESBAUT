@@ -39,11 +39,11 @@ function generarReadmePlugin() {
              const desc = descMatch ? descMatch[1] : '';
              const url = uMatch ? uMatch[1] : '';
 
-             if (esProy && titulo && url && descripcion) {
-                 proyList.push(`- [**${titulo}**](${url}): ${descripcion}`);
+             if (esProy && titulo && descripcion) {
+                 proyList.push(url ? `- [**${titulo}**](${url}): ${descripcion}` : `- **${titulo}**: ${descripcion}`);
              }
              if (esExp && titulo && sub && per && desc) {
-                 expList.push(`- **${sub}** en **${titulo}** (${per})\n  *${desc}*`);
+                 expList.push(`- **${sub}** at **${titulo}** (${per})\n  *${desc}*`);
              }
          }
       }
@@ -54,7 +54,7 @@ function generarReadmePlugin() {
         const regex = /titulo:\s*"([^"]+)",[\s\S]*?institucion:\s*"([^"]+)",[\s\S]*?periodo:\s*"([^"]+)",/g;
         let m;
         while ((m = regex.exec(formMatch[1])) !== null) {
-          formList.push(`- **${m[1]}** en **${m[2]}** (${m[3]})`);
+          formList.push(`- **${m[1]}** at **${m[2]}** (${m[3]})`);
         }
       }
 
@@ -69,43 +69,43 @@ function generarReadmePlugin() {
          pObj.foto = (personalMatch[1].match(/foto_readme:\s*"([^"]+)"/) || [])[1] || '';
       }
 
-      const md = `# 🚀 Portafolio | ${pObj.nombre}
+      const md = `# 🚀 Portfolio | ${pObj.nombre}
 <p align="center">
   <a href="${pObj.web}"><img src="${pObj.foto}" alt="${pObj.nombre}" width="220" style="border-radius: 50%;" /></a>
 </p>
 <p align="center">
-  <strong>🌐 Sitio Web:</strong> <a href="${pObj.web}">${pObj.web.replace(/^https?:\/\//, '')}</a>
+  <strong>🌐 Website:</strong> <a href="${pObj.web}">${pObj.web.replace(/^https?:\/\//, '')}</a>
 </p>
 
-${pObj.profesion} especializado en **${pObj.desc}** Aquí puedes ver un resumen de mi trayectoria y logros clave.
+${pObj.profesion} specialized in **${pObj.desc}** Here's a summary of my track record and key achievements.
 
-## 💼 Experiencia Profesional
+## 💼 Professional Experience
 ${expList.join('\n\n')}
 
-## 💻 Proyectos Destacados
+## 💻 Featured Projects
 ${proyList.join('\n')}
 
-## 🎓 Formación Académica
+## 🎓 Academic Background
 ${formList.join('\n')}
 
 ---
-> 💡 Este código (repositorio) puede usarse como plantilla para automatizar generativamente la creación de un Portafolio Web, este mismo README.md, y un CV Profesional estilo Harvard desde una sola fuente ([\`data.jsx\`](./src/data.jsx)) y se actualiza automaticamente.
+> 💡 This code (repository) can be used as a template to generatively automate the creation of a Web Portfolio, this very README.md, and a Harvard-style Professional CV from a single source ([\`data.jsx\`](./src/data.jsx)), updating automatically.
 
 `;
       fs.writeFileSync(readmePath, md);
-      console.log("✅ [Plugin] README.md se ha actualizado exitosamente con la información de data.jsx");
+      console.log("✅ [Plugin] README.md was successfully updated with data.jsx information");
 
-      // Llamada automatizada para generar el PDF estilo Harvard
+      // Automated call to generate the Harvard-style PDF
       exec('node scripts/generateCv.js', (err, stdout, stderr) => {
         if (err) {
-          console.error("❌ Error al generar el PDF del CV:", err);
+          console.error("❌ Error generating the CV PDF:", err);
         } else if (stdout) {
           console.log(stdout.trim());
         }
       });
 
     } catch (err) {
-      console.error("❌ Error al generar README.md:", err);
+      console.error("❌ Error generating README.md:", err);
     }
   };
 

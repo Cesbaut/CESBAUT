@@ -5,13 +5,14 @@ import imgPerfil from './img/IMG_6021.jpg';
 import { FaArrowRight, FaGraduationCap, FaBriefcase, FaRocket, FaGithub, FaEnvelope, FaDownload, FaFilePdf } from 'react-icons/fa';
 import cvFile from './pdf/CV_BAUTISTA_CASTILLA_CESAR.pdf';
 
-import { 
+import {
   DATOS_PERSONALES,
-  DATOS_PROYECTOS, 
-  DATOS_SKILLS, 
-  DATOS_EXP_PROFESIONAL, 
-  DATOS_FORMACION_ACADEMICA, 
-  DATOS_CERTIFICADOS 
+  DATOS_PROYECTOS,
+  DATOS_SKILLS,
+  DATOS_EXP_PROFESIONAL,
+  DATOS_FORMACION_ACADEMICA,
+  DATOS_CERTIFICADOS,
+  DATOS_HORARIO
 } from './data.jsx';
 
 function App() {
@@ -19,10 +20,10 @@ function App() {
     <div className="app-main">
       <header className="hero-jobs">
         <img src={imgPerfil} alt={DATOS_PERSONALES.nombre} className="hero-profile-img" />
-        <span className="hero-tag"><FaRocket /> TECNOLOGÍA DE ALTO IMPACTO</span>
+        <span className="hero-tag"><FaRocket /> HIGH-IMPACT TECHNOLOGY</span>
         <h1 className="hero-main-title">{DATOS_PERSONALES.nombre}.</h1>
         <p className="hero-desc">
-          {DATOS_PERSONALES.profesion} especializado en <br/>
+          {DATOS_PERSONALES.profesion} specialized in <br/>
           <strong>{DATOS_PERSONALES.descripcion}</strong>
         </p>
 
@@ -31,17 +32,17 @@ function App() {
             <FaGithub /> GitHub
           </a>
           <a href={cvFile} download={`CV_${DATOS_PERSONALES.nombre.replace(' ', '_')}.pdf`} className="apple-button apple-button-primary">
-            <FaDownload /> Descargar CV
+            <FaDownload /> Download CV
           </a>
           <a href={`mailto:${DATOS_PERSONALES.correo}`} className="apple-button apple-button-secondary">
-            <FaEnvelope /> Contacto
+            <FaEnvelope /> Contact
           </a>
         </div>
       </header>
 
       <div className="container">
         <section id="experiencia" style={{marginTop: '80px'}}>
-          <h2 className="section-title-big">Experiencia.</h2>
+          <h2 className="section-title-big">Experience.</h2>
           <div className="timeline">
             {DATOS_EXP_PROFESIONAL.map((exp, idx) => (
               <div key={idx} className="timeline-item">
@@ -76,7 +77,7 @@ function App() {
         </section>
 
         <section id="formacion" style={{marginTop: '120px'}}>
-          <h2 className="section-title-big">Formación.</h2>
+          <h2 className="section-title-big">Education.</h2>
           <div className="timeline">
             {DATOS_FORMACION_ACADEMICA.map((edu, idx) => (
               <div key={idx} className="timeline-item">
@@ -110,8 +111,57 @@ function App() {
           </div>
         </section>
 
+        <section id="horario" style={{marginTop: '120px'}}>
+          <h2 className="section-title-big">Weekly Schedule.</h2>
+          <p className="schedule-subtitle">Internship at Liverpool, university classes and personal study time.</p>
+          <div className="schedule-wrapper">
+            <div
+              className="schedule-grid"
+              style={{
+                gridTemplateColumns: `56px repeat(${DATOS_HORARIO.dias.length}, minmax(110px, 1fr))`,
+                gridTemplateRows: `auto repeat(${DATOS_HORARIO.horaFin - DATOS_HORARIO.horaInicio}, 30px)`
+              }}
+            >
+              <div className="schedule-corner"></div>
+              {DATOS_HORARIO.dias.map((dia, idx) => (
+                <div key={dia} className="schedule-day-header" style={{gridColumn: idx + 2, gridRow: 1}}>{dia}</div>
+              ))}
+
+              {Array.from({ length: DATOS_HORARIO.horaFin - DATOS_HORARIO.horaInicio }).map((_, i) => {
+                const hora = DATOS_HORARIO.horaInicio + i;
+                return (
+                  <React.Fragment key={hora}>
+                    <div className="schedule-hour-label" style={{gridColumn: 1, gridRow: i + 2}}>{hora}:00</div>
+                    {DATOS_HORARIO.dias.map((dia, dIdx) => (
+                      <div key={dia} className="schedule-cell" style={{gridColumn: dIdx + 2, gridRow: i + 2}}></div>
+                    ))}
+                  </React.Fragment>
+                );
+              })}
+
+              {DATOS_HORARIO.eventos.flatMap((ev) =>
+                ev.dias.map((dIdx) => (
+                  <div
+                    key={`${ev.titulo}-${dIdx}`}
+                    className="schedule-event"
+                    style={{
+                      gridColumn: dIdx + 2,
+                      gridRow: `${ev.inicio - DATOS_HORARIO.horaInicio + 2} / ${ev.fin - DATOS_HORARIO.horaInicio + 2}`,
+                      background: `${ev.color}29`,
+                      borderLeft: `3px solid ${ev.color}`,
+                      color: ev.color
+                    }}
+                  >
+                    {ev.titulo}
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+        </section>
+
         <section id="proyectos" style={{marginTop: '120px'}}>
-          <h2 className="section-title-big">Proyectos.</h2>
+          <h2 className="section-title-big">Projects.</h2>
           <div className="bento-grid">
             {DATOS_PROYECTOS.map((proy) => (
               <div key={proy.id} className="bento-card">
@@ -121,9 +171,13 @@ function App() {
                     <h2 className="card-title">{proy.titulo}</h2>
                     <p className="card-text">{proy.descripcion}</p>
                     <div style={{marginTop: '16px'}}>
-                      <a href={proy.url} target="_blank" rel="noreferrer" className="apple-button-link">
-                        Ver Preview <FaArrowRight style={{marginLeft: '10px'}} />
-                      </a>
+                      {proy.url ? (
+                        <a href={proy.url} target="_blank" rel="noreferrer" className="apple-button-link">
+                          View Preview <FaArrowRight style={{marginLeft: '10px'}} />
+                        </a>
+                      ) : (
+                        <span className="apple-tag">Internal / Confidential Project</span>
+                      )}
                     </div>
                     <div className="tags-row" style={{marginTop: '20px'}}>
                       {proy.tags.map((tag, idx) => (
@@ -143,7 +197,7 @@ function App() {
         </section>
 
         <section id="habilidades" style={{marginTop: '120px', marginBottom: '120px'}}>
-          <h2 className="section-title-big">Habilidades.</h2>
+          <h2 className="section-title-big">Skills.</h2>
           <div className="skills-grid-container">
             {DATOS_SKILLS.map((cat, idx) => (
               <div key={idx} className="skill-category-card">
@@ -162,7 +216,7 @@ function App() {
         </section>
 
         <section id="certificados" style={{marginTop: '120px', marginBottom: '120px'}}>
-          <h2 className="section-title-big">Certificados.</h2>
+          <h2 className="section-title-big">Certificates.</h2>
           <div className="certificates-grid">
             {DATOS_CERTIFICADOS.map((cert, idx) => (
               <a key={idx} href={cert.url} target="_blank" rel="noreferrer" className="certificate-card certificate-card-preview">
@@ -181,7 +235,7 @@ function App() {
       </div>
 
       <footer id="contacto" className="apple-footer">
-        <h2 className="hero-main-title" style={{fontSize: 'clamp(42px, 8vw, 82px)', marginBottom: '60px'}}>Hablemos.</h2>
+        <h2 className="hero-main-title" style={{fontSize: 'clamp(42px, 8vw, 82px)', marginBottom: '60px'}}>Let's Talk.</h2>
         <div className="contact-links" style={{flexDirection: 'column', gap: '24px', alignItems: 'center'}}>
           <a href={`mailto:${DATOS_PERSONALES.correo}`} className="contact-item" style={{fontSize: 'clamp(18px, 4vw, 24px)', fontWeight: '600', color: '#fff'}}>
             {DATOS_PERSONALES.correo}

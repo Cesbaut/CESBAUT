@@ -78,7 +78,7 @@ async function generarCV() {
     }
 
     // HTML Template (Harvard Style Match exactly as screenshot)
-    // Extraer datos personales globales
+    // Extract global personal data
     const personalMatch = content.match(/export const DATOS_PERSONALES = \{([\s\S]*?)\};/);
     let pObj = {};
     if (personalMatch) {
@@ -90,7 +90,7 @@ async function generarCV() {
 
     const htmlContent = `
     <!DOCTYPE html>
-    <html lang="es">
+    <html lang="en">
     <head>
       <meta charset="UTF-8">
       <style>
@@ -178,7 +178,7 @@ async function generarCV() {
         ${resumen}
       </div>
 
-      <h2>EXPERIENCIA PROFESIONAL</h2>
+      <h2>PROFESSIONAL EXPERIENCE</h2>
       ${experienciaItems.map(e => `
         <div class="item">
           <div class="item-header"><span>${e.titulo}</span></div>
@@ -189,7 +189,7 @@ async function generarCV() {
         </div>
       `).join('')}
 
-      <h2>EDUCACIÓN</h2>
+      <h2>EDUCATION</h2>
       ${formacion.map(f => `
         <div class="item" style="margin-bottom:8px;">
           <div class="item-header"><span>${f.inst}</span><span class="right">${f.loc}</span></div>
@@ -197,21 +197,21 @@ async function generarCV() {
         </div>
       `).join('')}
 
-      <h2>IDIOMAS</h2>
+      <h2>LANGUAGES</h2>
       <div class="desc-list">
         <ul>
           ${idiomas.map(i => `<li>${i}</li>`).join('')}
         </ul>
       </div>
 
-      <h2>CONOCIMIENTOS TÉCNICOS</h2>
+      <h2>TECHNICAL KNOWLEDGE</h2>
       <div class="desc-list">
         <ul>
           ${conocimientos.map(c => `<li>${c}</li>`).join('')}
         </ul>
       </div>
 
-      <h2>HABILIDADES PERSONALES</h2>
+      <h2>PERSONAL SKILLS</h2>
       <div class="desc-list">
         <ul>
           ${habilidades.map(h => `<li>${h}</li>`).join('')}
@@ -221,7 +221,7 @@ async function generarCV() {
     </html>
     `;
 
-    console.log("Generando PDF de tu CV (Estilo Harvard Fiel a la Original)...");
+    console.log("Generating your CV PDF (Harvard Style, faithful to the original)...");
     const browser = await puppeteer.launch({ headless: 'new' });
     const page = await browser.newPage();
     
@@ -235,9 +235,9 @@ async function generarCV() {
     });
 
     await browser.close();
-    console.log("✅ Tu 'CV_BAUTISTA_CASTILLA_CESAR.pdf' ha sido actualizado y es idéntico a tu CV de referencia.");
+    console.log("✅ Your 'CV_BAUTISTA_CASTILLA_CESAR.pdf' has been updated and matches your reference CV.");
   } catch (err) {
-    console.error("❌ Error generando el PDF:", err);
+    console.error("❌ Error generating the PDF:", err);
   }
 }
 

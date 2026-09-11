@@ -1,15 +1,16 @@
 import React from 'react';
-import { FaJava, FaHtml5, FaCss3Alt, FaCss3, FaJs, FaVuejs, FaBootstrap, FaPhp } from 'react-icons/fa';
+import { FaJava, FaHtml5, FaCss3Alt, FaCss3, FaJs, FaVuejs, FaBootstrap, FaPhp, FaCreditCard } from 'react-icons/fa';
 import { SiPython, SiDjango, SiWebassembly, SiReact, SiJavascript, SiC,  SiPostgresql, SiDocker, SiMysql, SiLua, SiTailwindcss, SiSelenium, SiPythonanywhere, SiLaravel, SiNodedotjs } from 'react-icons/si';
 import { BsTerminalFill } from 'react-icons/bs';
 import { FaGithub } from 'react-icons/fa';
 
 import logoQSP from './img/Logo_Quality_And_Service_in_Pest.webp';
 import logoUNAM from './img/UNAM.webp';
-import logoHexacode from './img/Logo_con_panel.svg'; 
+import logoHexacode from './img/Logo_con_panel.svg';
 import LogoLatager from './components/LogoLatager';
 import LogoMultimedia from './img/LOGO-MULTIMEDIA.png';
 import LogoSiccaad from './img/logo_negro.svg';
+import logoLiverpool from './img/Logo_Liverpool.svg';
 
 import certCesarBautista from './pdf/CERTIFICADOS/Cesar Bautista Castilla - 2024-08-11.pdf';
 import certConstanciaF11_2025 from './pdf/CERTIFICADOS/Constancia_Cesar_F11-2025-CP-01-C10-C06.pdf';
@@ -23,8 +24,8 @@ import certUdemy from './pdf/CERTIFICADOS/UC-155c355d-10c9-4bc8-abe6-ee28b2dde2a
 export const DATOS_PERSONALES = {
   nombre: "Cesar Bautista",
   nombreCompleto: "Bautista Castilla Cesar",
-  profesion: "Ingeniero de Software",
-  descripcion: "Desarrollo Web Full Stack.",
+  profesion: "Software Engineer",
+  descripcion: "Full Stack Web Development.",
   correo: "bautistac.cesar.p8@gmail.com",
   telefono: "+52 5510453326",
   github: "https://github.com/Cesbaut",
@@ -35,20 +36,50 @@ export const DATOS_PERSONALES = {
 
 export const DATOS_PORTAFOLIO = [
   {
+    id: "liverpool",
+    mostrarEnProyectos: false,
+    mostrarEnExperiencia: true,
+    titulo: "Liverpool",
+    subtitulo: "Software Development Intern",
+    periodo: "April 2026 - September 2026 (6-Month Internship)",
+    desc: "Full Stack Development Internship at El Puerto de Liverpool, one of Mexico's largest department store and e-commerce retail groups.",
+    logo: <img src={logoLiverpool} alt="Liverpool" style={{maxWidth: '300px', maxHeight: '130px', objectFit: 'contain'}} />,
+    url: "https://www.liverpool.com.mx/",
+    logros: [
+      "<b>Joined a newly-formed Retail Engineering team</b> at Liverpool, building new in-store <b>Point-of-Sale (POS)</b> systems.",
+      "<b>Focused on the payment transaction module</b>, developing and testing the logic that processes in-store payments end-to-end."
+    ]
+  },
+  {
+    id: "eplmask",
+    mostrarEnProyectos: true,
+    mostrarEnExperiencia: false,
+    cv_ignore: true,
+    label: "Payments Infrastructure",
+    titulo: "EPL MASK",
+    descripcion: "Middleware that translates payment transaction messages between point-of-sale terminals and Base24, Liverpool's core transaction switch.",
+    visual: <img src={logoLiverpool} alt="Liverpool" style={{maxWidth: '240px', maxHeight: '120px', objectFit: 'contain'}} />,
+    tags: [
+      { name: "Java", icon: <FaJava /> },
+      { name: "Point of Sale", icon: <BsTerminalFill /> },
+      { name: "Payments", icon: <FaCreditCard /> },
+    ]
+  },
+  {
     id: "latager",
     mostrarEnProyectos: true,
     mostrarEnExperiencia: false,
-    label: "Proyecto Personal",
-    titulo: "Plataforma Latager",
-    subtitulo: "Creador y Desarrollador Principal",
-    periodo: "Proyecto Activo",
-    descripcion: "Generador de horarios en tiempo real para mas de 3500 usuarios, usando web scraping y reconocimiento de lenguaje natural.",
+    label: "Personal Project",
+    titulo: "Latager Platform",
+    subtitulo: "Founder & Lead Developer",
+    periodo: "Active Project",
+    descripcion: "Real-time schedule builder for over 4,500 users, powered by web scraping and natural language recognition.",
     visual: <LogoLatager />,
-    url: "https://latager.com", 
+    url: "https://latager.com",
     logros: [
-      "<b>Diseñé y desplegué</b> una herramienta de optimización de horarios que actualmente brinda servicio a más de <b>3,500 usuarios activos</b> de la UNAM.",
-      "<b>Implementé sincronización en tiempo real</b> y funciones avanzadas de comparación de horarios utilizando <b>React</b> y <b>Django REST Framework</b>, mejorando la eficiencia en la planeación académica de los estudiantes.",
-      "<i>Gestioné arquitecturas de datos híbridas</i> con <b>MySQL</b> para asegurar la integridad de la información y la escalabilidad del proyecto."
+      "<b>Designed and deployed</b> a schedule optimization tool currently serving more than <b>3,500 active users</b> at UNAM.",
+      "<b>Implemented real-time synchronization</b> and advanced schedule-comparison features using <b>React</b> and <b>Django REST Framework</b>, improving the efficiency of students' academic planning.",
+      "<i>Managed hybrid data architectures</i> with <b>MySQL</b> to ensure data integrity and project scalability."
     ],
     tags: [
       { name: "React", icon: <SiReact /> },
@@ -63,36 +94,36 @@ export const DATOS_PORTAFOLIO = [
     id: "multimedia",
     mostrarEnExperiencia: true,
     mostrarEnProyectos: false,
-    titulo: "Laboratorio de Multimedia e Internet",
-    subtitulo: "Director de Proyecto / Desarrollador Full Stack",
-    periodo: "Enero 2024 - Diciembre 2025",
-    desc: "Lidere aplicaciones como SICCAAD y desarrollador en la aplicacion Hexacode.",
-    logo: <img src={LogoMultimedia} alt="Multimedia" style={{maxWidth: '180px', maxHeight: '80px', objectFit: 'contain'}} />,
+    titulo: "Multimedia and Internet Laboratory",
+    subtitulo: "Project Director / Full Stack Developer",
+    periodo: "January 2024 - December 2025",
+    desc: "Led applications such as SICCAAD and developed the Hexacode application.",
+    logo: <img src={LogoMultimedia} alt="Multimedia" style={{maxWidth: '220px', maxHeight: '100px', objectFit: 'contain'}} />,
     url: "https://mmedia1.fi-b.unam.mx/",
     logros: [
-      "<b>Dirigí el ciclo de vida completo de SICCAAD</b>, una plataforma integral de gestión académica para la UNAM, coordinando los esfuerzos de desarrollo para asegurar una entrega eficiente y alineada con los objetivos institucionales.",
-      "<b>Construí Hexacode</b>, un entorno web especializado en la compilación y ejecución de código ensamblador (z80 y 8086), integrando <b>Lua</b> para el procesamiento lógico y garantizando una ejecución fluida en el navegador.",
-      "<b>Optimicé la disponibilidad del servicio</b> mediante el mantenimiento preventivo y correctivo de servidores, asegurando la estabilidad de las plataformas bajo demanda constante.",
-      "<b>Mejoré la experiencia de usuario (UX)</b> a través de actualizaciones iterativas y mantenimiento técnico del front-end, reduciendo fricciones en el uso diario de las herramientas."
+      "<b>Directed the full life cycle of SICCAAD</b>, a comprehensive academic management platform for UNAM, coordinating development efforts to ensure an efficient delivery aligned with institutional goals.",
+      "<b>Built Hexacode</b>, a web environment specialized in compiling and running assembly code (z80 and 8086), integrating <b>Lua</b> for logic processing and ensuring smooth execution in the browser.",
+      "<b>Optimized service availability</b> through preventive and corrective server maintenance, ensuring platform stability under constant demand.",
+      "<b>Improved user experience (UX)</b> through iterative updates and technical front-end maintenance, reducing friction in the tools' daily use."
     ]
   },
   {
     id: "qsp",
     mostrarEnProyectos: true,
     mostrarEnExperiencia: true,
-    label: "Trabajo",
+    label: "Work",
     titulo: "Quality and Service in Pest",
-    subtitulo: "Desarrollador Full Stack",
-    periodo: "Julio 2025 - Diciembre 2025",
-    descripcion: "Aplicacion web para empresa de control de insecticidas.",
-    desc: "Empresa de Control de plagas, en donde migramos de php al framework django.",
+    subtitulo: "Full Stack Developer",
+    periodo: "July 2025 - December 2025",
+    descripcion: "Web application for a pest control company.",
+    desc: "Pest control company, where we migrated from PHP to the Django framework.",
     visual: <img src={logoQSP} alt="QSP" className="card-visual-img rounded-apple" />,
-    logo: <img src={logoQSP} alt="QSP" style={{maxWidth: '160px', maxHeight: '70px', objectFit: 'contain', borderRadius: '12px'}} />,
+    logo: <img src={logoQSP} alt="QSP" style={{maxWidth: '200px', maxHeight: '90px', objectFit: 'contain', borderRadius: '12px'}} />,
     url: "https://plagasqsp.com/",
     logros: [
-      "<b>Desarrollé la arquitectura Full Stack</b> de la plataforma corporativa utilizando <b>Django</b>, gestionando íntegramente desde la lógica del servidor y base de datos hasta la interfaz de usuario.",
-      "Desarrollo de un módulo de control de químicos, permitiendo la administración y el seguimiento técnico de aplicaciones en campo.",
-      "<b>Sistematicé la generación automatizada de reportes de personal</b>, optimizando la entrega de informes de inspección y facilitando la auditoría de servicios realizados."
+      "<b>Developed the Full Stack architecture</b> of the corporate platform using <b>Django</b>, managing everything from server-side logic and the database to the user interface.",
+      "Developed a chemical control module, enabling the administration and technical tracking of field applications.",
+      "<b>Systematized automated staff report generation</b>, streamlining the delivery of inspection reports and facilitating the audit of completed services."
     ],
     tags: [
       { name: "Python / Django", icon: <SiDjango /> },
@@ -108,11 +139,11 @@ export const DATOS_PORTAFOLIO = [
     mostrarEnProyectos: true,
     mostrarEnExperiencia: false,
     cv_ignore: true,
-    label: "Ensamblador",
+    label: "Assembler",
     titulo: "Hexacode",
-    descripcion: "IDE simulador de ensamblador de arquitectura z80/8086.",
+    descripcion: "z80/8086 architecture assembler IDE simulator.",
     visual: <img src={logoHexacode} alt="Hexacode" className="card-visual-img" />,
-    url: "https://mmedia1.fi-b.unam.mx/hexacode/", 
+    url: "https://mmedia1.fi-b.unam.mx/hexacode/",
     tags: [
       { name: "Low-Level", icon: <BsTerminalFill /> },
       { name: "Lua Engine", icon: <SiLua /> },
@@ -128,10 +159,10 @@ export const DATOS_PORTAFOLIO = [
     mostrarEnProyectos: true,
     mostrarEnExperiencia: false,
     cv_ignore: true,
-    label: "Institucional",
+    label: "Institutional",
     titulo: "SICCAAD UNAM",
-    descripcion: "Optimización de plataforma académica institucional. Mejora del 25% en rendimiento y eficiencia de datos masivos.",
-    visual: <img src={LogoSiccaad} alt="SICCAAD" style={{maxWidth: '220px', maxHeight: '100px', objectFit: 'contain', filter: 'brightness(0) invert(1)'}} />,
+    descripcion: "Optimization of an institutional academic platform. 25% improvement in performance and large-scale data efficiency.",
+    visual: <img src={LogoSiccaad} alt="SICCAAD" style={{maxWidth: '260px', maxHeight: '120px', objectFit: 'contain', filter: 'brightness(0) invert(1)'}} />,
     url: "https://www.siccaad.unam.mx/accounts/login/",
     tags: [
       { name: "Python / Django", icon: <SiDjango /> },
@@ -174,7 +205,7 @@ export const DATOS_SKILLS = [
     ]
   },
   {
-    categoria: "Aprendiendo",
+    categoria: "Learning",
     color: "#ff9f0a",
     habilidades: [
       { name: "Laravel", icon: <SiLaravel />, brandColor: "#FF2D20" },
@@ -183,7 +214,7 @@ export const DATOS_SKILLS = [
     ]
   },
   {
-    categoria: "Herramientas",
+    categoria: "Tools",
     color: "#64d2ff",
     habilidades: [
       { name: "Git", icon: <FaGithub />, brandColor: "#F05032" },
@@ -198,52 +229,68 @@ export const DATOS_SKILLS = [
 
 export const DATOS_FORMACION_ACADEMICA = [
   {
-    titulo: "Ingeniería en Computación",
-    institucion: "Universidad Nacional Autónoma de México (UNAM)",
-    ubicacion: "Ciudad de México",
+    titulo: "Computer Engineering",
+    institucion: "National Autonomous University of Mexico (UNAM)",
+    ubicacion: "Mexico City",
     periodo: "2022 - 2027",
-    subtitulo: "En curso",
-    logo: <img src={logoUNAM} alt="UNAM" style={{maxWidth: '120px', maxHeight: '100px', objectFit: 'contain', filter: 'brightness(0) invert(1)', opacity: 0.8}} />,
+    subtitulo: "In Progress",
+    logo: <img src={logoUNAM} alt="UNAM" style={{maxWidth: '150px', maxHeight: '120px', objectFit: 'contain', filter: 'brightness(0) invert(1)', opacity: 0.8}} />,
     url: "https://www.unam.mx/"
   }
 ];
 
 export const DATOS_CERTIFICADOS = [
-  { nombre: "Constancia Desarrollo Web 2025", url: certConstanciaF11_2025 },
-  { nombre: "Constancia Docker", url: certDocker2024 },
-  { nombre: "Constancia Python Intermedio", url: certF11_2023_C06 },
-  { nombre: "Constancia PostgreSQL", url: certF11_2023_C07 },
-  { nombre: "Constancia HTML, CSS y JavaScript", url: certF11_2023_C09 },
-  { nombre: "Constancia Lenguaje C", url: certF11_2024_C13 },
-  { nombre: "Tecnologías Emergentes", url: certCesarBautista },
-  { nombre: "Constancia Three.js", url: certUdemy }
+  { nombre: "Web Development Certificate 2025", url: certConstanciaF11_2025 },
+  { nombre: "Docker Certificate", url: certDocker2024 },
+  { nombre: "Intermediate Python Certificate", url: certF11_2023_C06 },
+  { nombre: "PostgreSQL Certificate", url: certF11_2023_C07 },
+  { nombre: "HTML, CSS and JavaScript Certificate", url: certF11_2023_C09 },
+  { nombre: "C Language Certificate", url: certF11_2024_C13 },
+  { nombre: "Emerging Technologies", url: certCesarBautista },
+  { nombre: "Three.js Certificate", url: certUdemy }
 ];
 
+export const DATOS_HORARIO = {
+  dias: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  horaInicio: 7,
+  horaFin: 21,
+  eventos: [
+    { titulo: "Liverpool — Internship", dias: [0, 1, 2, 3, 4], inicio: 8, fin: 14, color: "#ff375f" },
+    { titulo: "Homework / Personal Study", dias: [0, 1, 2, 3], inicio: 15, fin: 17, color: "#ff453a" },
+    { titulo: "University Labs (In-Person)", dias: [4], inicio: 15, fin: 17, color: "#64d2ff" },
+    { titulo: "Weekend Seminar (Hybrid)", dias: [5], inicio: 8, fin: 11, color: "#ff9f0a" },
+    { titulo: "Internet Services (Self-Study)", dias: [0, 2], inicio: 17, fin: 19, color: "#ffd60a" },
+    { titulo: "Microcomputers (In-Person)", dias: [1, 3], inicio: 17, fin: 19, color: "#63e6be" },
+    { titulo: "Country Resources Seminar", dias: [4], inicio: 17, fin: 21, color: "#bf5af2" },
+    { titulo: "Secure Data Networks", dias: [0, 1, 2, 3], inicio: 19, fin: 21, color: "#ffb340" },
+  ]
+};
+
 export const DATOS_CV = {
-  resumen: "<b>Director de Proyecto y Desarrollador Full Stack</b> con más de 3 años de trayectoria liderando soluciones tecnológicas de alto impacto. Como <b>Director de Proyecto en SICCAAD</b>, coordiné la unificación técnica de la plataforma, logrando optimizar los tiempos de entrega en un <b>40%</b> y el rendimiento web en un <b>25%</b>. Fundador de <i>Latager</i>, herramienta de optimización académica que gestiona a más de <b>3,500 estudiantes</b>, demostrando una sólida capacidad para dirigir equipos y proyectos desde la concepción hasta el escalado masivo.",
+  resumen: "<b>Project Director and Full Stack Developer</b> with over 3 years of experience leading high-impact technology solutions. As <b>Project Director at SICCAAD</b>, I coordinated the platform's technical unification, optimizing delivery times by <b>40%</b> and web performance by <b>25%</b>. Founder of <i>Latager</i>, an academic optimization tool that manages more than <b>3,500 students</b>, demonstrating a strong ability to lead teams and projects from conception through large-scale rollout. Currently a <b>Software Development Intern at Liverpool</b>, building payment-transaction logic for new retail Point-of-Sale systems.",
   idiomas: [
-    "Inglés nivel B1",
-    "Nativo en Español."
+    "English - B1 level",
+    "Spanish - Native."
   ],
   conocimientos: [
-    "Python (intermedio, certificado profesor)",
-    "Django y Django REST framework (avanzado)",
-    "HTML, CSS y JavaScript (avanzado, certificado como profesor)",
-    "PostgreSQL, SQL Server y MySQL (básico)",
-    "Lenguaje C (básico)",
-    "Java (básico)",
-    "Git y GitHub",
-    "React (Intermedio)",
-    "Vue (básico)",
-    "Docker (intermedio)",
-    "Ensamblador (intermedio)",
-    "Lua (básico)",
-    "Prompt Engineering y herramientas de productividad con IA"
+    "Python (intermediate, certified instructor)",
+    "Django and Django REST framework (advanced)",
+    "HTML, CSS and JavaScript (advanced, certified instructor)",
+    "PostgreSQL, SQL Server and MySQL (basic)",
+    "C language (basic)",
+    "Java (basic)",
+    "Git and GitHub",
+    "React (intermediate)",
+    "Vue (basic)",
+    "Docker (intermediate)",
+    "Assembler (intermediate)",
+    "Lua (basic)",
+    "Prompt Engineering and AI productivity tools"
   ],
   habilidades: [
-    "Resolución de problemas técnicos",
-    "Autogestión y aprendizaje autodidacta.",
-    "Comunicación efectiva en equipos técnicos.",
-    "Adaptabilidad a nuevas tecnologías."
+    "Technical problem solving",
+    "Self-management and self-taught learning.",
+    "Effective communication within technical teams.",
+    "Adaptability to new technologies."
   ]
 };

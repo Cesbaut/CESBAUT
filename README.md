@@ -1,29 +1,33 @@
-# 🚀 Portafolio | Cesar Bautista
+# 🚀 Portfolio | Cesar Bautista
 <p align="center">
   <a href="https://cesbaut.latager.com/"><img src="./src/img/IMG_6021.jpg" alt="Cesar Bautista" width="220" style="border-radius: 50%;" /></a>
 </p>
 <p align="center">
-  <strong>🌐 Sitio Web:</strong> <a href="https://cesbaut.latager.com/">cesbaut.latager.com/</a>
+  <strong>🌐 Website:</strong> <a href="https://cesbaut.latager.com/">cesbaut.latager.com/</a>
 </p>
 
-Ingeniero de Software especializado en **Desarrollo Web Full Stack.** Aquí puedes ver un resumen de mi trayectoria y logros clave.
+Software Engineer specialized in **Full Stack Web Development.** Here's a summary of my track record and key achievements.
 
-## 💼 Experiencia Profesional
-- **Director de Proyecto / Desarrollador Full Stack** en **Laboratorio de Multimedia e Internet** (Enero 2024 - Diciembre 2025)
-  *Lidere aplicaciones como SICCAAD y desarrollador en la aplicacion Hexacode.*
+## 💼 Professional Experience
+- **Software Development Intern** at **Liverpool** (April 2026 - September 2026 (6-Month Internship))
+  *Full Stack Development Internship at El Puerto de Liverpool, one of Mexico's largest department store and e-commerce retail groups.*
 
-- **Desarrollador Full Stack** en **Quality and Service in Pest** (Julio 2025 - Diciembre 2025)
-  *Empresa de Control de plagas, en donde migramos de php al framework django.*
+- **Project Director / Full Stack Developer** at **Multimedia and Internet Laboratory** (January 2024 - December 2025)
+  *Led applications such as SICCAAD and developed the Hexacode application.*
 
-## 💻 Proyectos Destacados
-- [**Plataforma Latager**](https://latager.com): Generador de horarios en tiempo real para mas de 3500 usuarios, usando web scraping y reconocimiento de lenguaje natural.
-- [**Quality and Service in Pest**](https://plagasqsp.com/): Aplicacion web para empresa de control de insecticidas.
-- [**Hexacode**](https://mmedia1.fi-b.unam.mx/hexacode/): IDE simulador de ensamblador de arquitectura z80/8086.
-- [**SICCAAD UNAM**](https://www.siccaad.unam.mx/accounts/login/): Optimización de plataforma académica institucional. Mejora del 25% en rendimiento y eficiencia de datos masivos.
+- **Full Stack Developer** at **Quality and Service in Pest** (July 2025 - December 2025)
+  *Pest control company, where we migrated from PHP to the Django framework.*
 
-## 🎓 Formación Académica
-- **Ingeniería en Computación** en **Universidad Nacional Autónoma de México (UNAM)** (2022 - 2027)
+## 💻 Featured Projects
+- **EPL MASK**: Middleware that translates payment transaction messages between point-of-sale terminals and Base24, Liverpool's core transaction switch.
+- [**Latager Platform**](https://latager.com): Real-time schedule builder for over 4,500 users, powered by web scraping and natural language recognition.
+- [**Quality and Service in Pest**](https://plagasqsp.com/): Web application for a pest control company.
+- [**Hexacode**](https://mmedia1.fi-b.unam.mx/hexacode/): z80/8086 architecture assembler IDE simulator.
+- [**SICCAAD UNAM**](https://www.siccaad.unam.mx/accounts/login/): Optimization of an institutional academic platform. 25% improvement in performance and large-scale data efficiency.
+
+## 🎓 Academic Background
+- **Computer Engineering** at **National Autonomous University of Mexico (UNAM)** (2022 - 2027)
 
 ---
-> 💡 Este código (repositorio) puede usarse como plantilla para automatizar generativamente la creación de un Portafolio Web, este mismo README.md, y un CV Profesional estilo Harvard desde una sola fuente ([`data.jsx`](./src/data.jsx)) y se actualiza automaticamente.
+> 💡 This code (repository) can be used as a template to generatively automate the creation of a Web Portfolio, this very README.md, and a Harvard-style Professional CV from a single source ([`data.jsx`](./src/data.jsx)), updating automatically.
 
