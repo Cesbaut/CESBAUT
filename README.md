@@ -9,6 +9,9 @@
 Software Engineer specialized in **Full Stack Web Development.** Here's a summary of my track record and key achievements.
 
 ## 💼 Professional Experience
+- **Junior Software Developer - IT Payments** at **Liverpool** (October 2026 - Present)
+  *Junior developer in the IT Payments area at El Puerto de Liverpool.*
+
 - **Software Development Intern** at **Liverpool** (April 2026 - September 2026 (6-Month Internship))
   *Full Stack Development Internship at El Puerto de Liverpool, one of Mexico's largest department store and e-commerce retail groups.*
 

@@ -36,6 +36,20 @@ export const DATOS_PERSONALES = {
 
 export const DATOS_PORTAFOLIO = [
   {
+    id: "liverpool-junior",
+    mostrarEnProyectos: false,
+    mostrarEnExperiencia: true,
+    titulo: "Liverpool",
+    subtitulo: "Junior Software Developer - IT Payments",
+    periodo: "October 2026 - Present",
+    desc: "Junior developer in the IT Payments area at El Puerto de Liverpool.",
+    logo: <img src={logoLiverpool} alt="Liverpool" style={{maxWidth: '300px', maxHeight: '130px', objectFit: 'contain'}} />,
+    url: "https://www.liverpool.com.mx/",
+    logros: [
+      "<b>Promoted to Junior Developer</b> in the <b>IT Payments</b> area after completing the internship."
+    ]
+  },
+  {
     id: "liverpool",
     mostrarEnProyectos: false,
     mostrarEnExperiencia: true,
